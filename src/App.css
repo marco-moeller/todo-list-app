@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(99, 127, 157, 1) 0%,
+    rgba(198, 245, 255, 1) 100%
+  );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todolist--container {
+  position: relative;
   display: flex;
   flex-direction: column;
+  margin: auto;
+  width: 100%;
+  margin-top: 100px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.input--container {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+
+.new--task--input {
+  text-indent: 10px;
+  border-radius: 5px;
+  height: 40px;
+  width: 370px;
+  border: 1px solid orange;
+}
+
+.add--btn {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(84, 96, 211);
   color: white;
+  width: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.add--btn:active {
+  box-shadow: inset 2px 2px 3px -2px rgba(0, 0, 0, 0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task--container {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+
+.task--input {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.delete-btn {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.delete-btn {
+  display: block;
+  margin-left: auto;
+}
+
+.trash-icon {
+  cursor: pointer;
+  opacity: 0;
+}
+
+.trash-icon:hover {
+  opacity: 100;
+}
+
+.gg-trash {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 10px;
+  height: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 2px, inset -2px 0 0, inset 2px 0 0;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  margin-top: 4px;
+}
+
+.gg-trash::after,
+.gg-trash::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.gg-trash::after {
+  background: currentColor;
+  border-radius: 3px;
+  width: 16px;
+  height: 2px;
+  top: -4px;
+  left: -5px;
+}
+
+.gg-trash::before {
+  width: 10px;
+  height: 4px;
+  border: 2px solid;
+  border-bottom: transparent;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  top: -7px;
+  left: -2px;
 }
